@@ -1,0 +1,21 @@
+learning Mangment System SRS
+Front End Packages: [Vue Js, toaster]
+Back End Packeges: [Spatie Media Liberary,] 
+
+
+Pages:
+- Home Page -> [assing new student to new course ,]
+- Student Page -> [table for students by code and grade filter, add new student modal ]
+    - @id studnt info -> [ all student details, student parents, student photo, student courses]
+- Grade Page -> [all grades details table by name, add new grade modal ]
+    - @id grade info -> [all grade details, grade courses]
+- Course Page -> [all course table by teacher and grade, add new course modal]
+    - @id course info -> [all course classes]
+    - @id get course student  -> [get specific course students ]
+    - get class details 
+- Teacher Page -> [teachers table , add new teacher modal ]
+    - @id teacher detials -> [get teacher details, teacher course info ]
+- Classes Page -> [get all classes table by course and grade, add new class modal ]
+    - @id class details -> [all class info ]
+
+ 
