@@ -19573,8 +19573,21 @@ __webpack_require__.r(__webpack_exports__);
   name: "BaseSidebar",
   data: function data() {
     return {
-      isOpen: true
+      isOpen: true,
+      students: true,
+      studentMenu: false
     };
+  },
+  computed: {
+    isStudents: function isStudents() {
+      return window.location.pathname == "/student";
+    },
+    isStudentsInfo: function isStudentsInfo() {
+      return window.location.pathname == "/student-info";
+    },
+    isDashboard: function isDashboard() {
+      return window.location.pathname == "/home";
+    }
   },
   methods: {
     logout: function logout() {
@@ -19582,6 +19595,9 @@ __webpack_require__.r(__webpack_exports__);
         return location.reload();
       });
     }
+  },
+  mounted: function mounted() {
+    //
   }
 });
 
@@ -19805,17 +19821,60 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   d: "M4 6h16M4 12h16M4 18h16"
 })], -1 /* HOISTED */);
 var _hoisted_6 = [_hoisted_5];
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul><li class=\"px-2 py-3 bg-gray-900 rounded\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"></path></svg><span class=\"mx-2 text-gray-300\">Dashboard</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg><span class=\"mx-2 text-gray-300\">Team</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Projects</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Calendar</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4\"></path></svg><span class=\"mx-2 text-gray-300\">Documents</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Reports</span></a></li></ul><div class=\"border-t border-gray-700 -mx-2 mt-2 md:hidden\"></div>", 2);
+var _hoisted_7 = {
+  href: "/home",
+  "class": "flex items-center"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "w-6 text-gray-500",
+  fill: "none",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "stroke-width": "2",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+})], -1 /* HOISTED */);
 var _hoisted_9 = {
+  "class": "flex items-center"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "w-6 text-gray-500",
+  fill: "none",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "stroke-width": "2",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+})], -1 /* HOISTED */);
+var _hoisted_11 = {
+  "class": "mt-2 mx-10"
+};
+var _hoisted_12 = {
+  href: "/student",
+  "class": "flex flex-col items-start"
+};
+var _hoisted_13 = {
+  href: "/student-info",
+  "class": "flex flex-col items-start"
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"/asd\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Projects</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Calendar</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4\"></path></svg><span class=\"mx-2 text-gray-300\">Documents</span></a></li><li class=\"px-2 py-3 hover:bg-gray-900 rounded mt-2\"><a href=\"#\" class=\"flex items-center\"><svg class=\"w-6 text-gray-500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path d=\"M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg><span class=\"mx-2 text-gray-300\">Reports</span></a></li>", 4);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "border-t border-gray-700 -mx-2 mt-2 md:hidden"
+}, null, -1 /* HOISTED */);
+var _hoisted_19 = {
   "class": "mt-6 md:hidden"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "px-2 py-3 hover:bg-gray-900 rounded mt-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
   "class": "mx-2 text-gray-300"
 }, "Account Settings")], -1 /* HOISTED */);
-var _hoisted_11 = {
+var _hoisted_21 = {
   "class": "px-2 py-3 hover:bg-gray-900 rounded mt-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -19827,9 +19886,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "text-gray-300 hover:text-gray-500 focus:outline-none focus:text-gray-500"
   }, _hoisted_6)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-2 py-6 md:block", $data.isOpen ? 'block' : 'hidden'])
-  }, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-2 py-3 rounded", $options.isDashboard ? 'bg-gray-900' : 'hover:bg-gray-900'])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["mx-2 text-gray-300", $options.isDashboard ? 'text-sky-500' : ''])
+  }, "Dashboard", 2 /* CLASS */)])], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-2 py-3 rounded mt-2", $options.isStudents || $options.isStudentsInfo ? 'bg-gray-900' : 'hover:bg-gray-900'])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $data.studentMenu = !$data.studentMenu;
+    }),
+    "class": "text-white font-xl mx-2",
+    href: "#"
+  }, "Students Menu")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["mx-2 text-gray-300", $options.isStudents ? 'text-sky-500' : ''])
+  }, "- Students", 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["mx-2 text-gray-300", $options.isStudentsInfo ? 'text-sky-500' : ''])
+  }, "- Students info", 2 /* CLASS */)])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $options.isStudents || $options.isStudentsInfo || $data.studentMenu]])], 2 /* CLASS */), _hoisted_14]), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "mx-2 text-gray-300",
-    onClick: _cache[1] || (_cache[1] = function () {
+    onClick: _cache[2] || (_cache[2] = function () {
       return $options.logout && $options.logout.apply($options, arguments);
     })
   }, "Logout")])])], 2 /* CLASS */)]);

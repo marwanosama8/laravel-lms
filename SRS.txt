@@ -16,6 +16,6 @@ Pages:
 - Teacher Page -> [teachers table , add new teacher modal ]
     - @id teacher detials -> [get teacher details, teacher course info ]
 - Classes Page -> [get all classes table by course and grade, add new class modal ]
-    - @id class details -> [all class info ]
+    - @id class details -> [all class info]
 
  
