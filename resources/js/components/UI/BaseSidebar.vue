@@ -51,7 +51,7 @@
                         </a>
                         <a href="/student-info" class="flex flex-col items-start">
 
-                            <span class="mx-2 text-gray-300" :class="isStudentsInfo ? 'text-sky-500' : ''">- Students
+                            <span class="mx-2 text-gray-300" :class="isStudentsInfo ? 'text-sky-500 ' : 'hidden'">- Students
                                 info</span>
                         </a>
                     </div>

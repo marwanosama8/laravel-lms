@@ -14,6 +14,7 @@
         "autoprefixer": "^10.4.12",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
+        "laravel-vue-datatable": "^0.6.0",
         "lodash": "^4.17.19",
         "postcss": "^8.4.18",
         "resolve-url-loader": "^2.3.1",
@@ -22,6 +23,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "laravel-vue-pagination": "^3.0.0",
         "vue-loader": "^17.0.0"
     }
 }
