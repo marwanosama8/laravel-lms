@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\StudentsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,6 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('/student', 'pages.student');
-Route::view('/student-info', 'pages.student-info');
+Route::view('/student', 'pages.students.student');
+Route::get('/student-info', [StudentsController::class,'studentInfo']);
 

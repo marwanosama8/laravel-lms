@@ -60,7 +60,7 @@
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     <div class="flex gap-5">
-                                        <a href="#"
+                                        <a :href="'/student-info?id='+data.id"
                                             class=" text-blue-600 hover:text-blue-900 font-bold shadow-lg">Details</a>
                                     </div>
                                 </td>

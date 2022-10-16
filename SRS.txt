@@ -7,6 +7,8 @@ Pages:
 - Home Page -> [assing new student to new course ,]
 - Student Page -> [table for students by code and grade filter, add new student modal ]
     -  @id studnt info -> "show if called" [ all student details, student parents, student photo, student courses]
+   // new
+    - add student page -> [create student details, create parent details (check if paernt was created or not ),  ]
 - Grade Page -> [all grades details table by name, add new grade modal ]
     - @id grade info -> [all grade details, grade courses]
 - Course Page -> [all course table by teacher and grade, add new course modal]

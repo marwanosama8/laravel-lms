@@ -22,6 +22,7 @@ class StudentsController extends Controller
 
     public function studentInfo(Request $request)
     {
-        
+        $data = Student::find($request->get('id'));
+        return StudentResource::make($data);
     }
 }
