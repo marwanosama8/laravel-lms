@@ -8,3 +8,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.btn-primary{
+    @apply text-center text-white p-2 font-bold bg-blue-700 border-b-slate-300 rounded-md shadow-md
+}

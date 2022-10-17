@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="px-2 py-3  rounded mt-2"
-                    :class="isStudents || isStudentsInfo ? 'bg-gray-900' : 'hover:bg-gray-900'">
+                    :class="isStudents || isStudentsInfo || isStudentsCreate ? 'bg-gray-900' : 'hover:bg-gray-900'">
                     <div class="flex items-center">
                         <svg class="w-6 text-gray-500 " fill="none" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +44,7 @@
                         </svg>
                         <a @click="studentMenu = !studentMenu" class="text-white font-xl mx-2" href="#">Students Menu</a>
                     </div>
-                    <div v-show="isStudents || isStudentsInfo || studentMenu" class="mt-2 mx-10">
+                    <div v-show="isStudents || isStudentsInfo || studentMenu || isStudentsCreate" class="mt-2 mx-10">
                         <a href="/student" class="flex flex-col items-start">
 
                             <span class="mx-2 text-gray-300" :class="isStudents ? 'text-sky-500' : ''">- Students</span>
@@ -53,6 +53,10 @@
 
                             <span class="mx-2 text-gray-300" :class="isStudentsInfo ? 'text-sky-500 ' : 'hidden'">- Students
                                 info</span>
+                        </a>
+                        <a href="/student-create" class="flex flex-col items-start">
+
+                            <span class="mx-2 text-gray-300" :class="isStudentsCreate ? 'text-sky-500 ' : 'hidden'">- Create Student</span>
                         </a>
                     </div>
                 </li>
@@ -128,6 +132,9 @@ export default {
         },
         isStudentsInfo() {
             return window.location.pathname == "/student-info"
+        },
+        isStudentsCreate() {
+            return window.location.pathname == "/student-create"
         },
         isDashboard() {
             return window.location.pathname == "/home"

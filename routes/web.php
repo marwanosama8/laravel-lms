@@ -23,5 +23,6 @@ Auth::routes();
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::view('/student', 'pages.students.student');
-Route::get('/student-info', [StudentsController::class,'studentInfo']);
+Route::view('/student-create', 'pages.students.student-create');
+// Route::get('/student-create', [StudentsController::class,'studentInfo']);
 

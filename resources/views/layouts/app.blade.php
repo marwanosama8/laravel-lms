@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Laravel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{ asset('/js/app.js') }}" defer></script>
